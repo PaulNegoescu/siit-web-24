@@ -1,0 +1,71 @@
+#logo img {
+  width: 50px;
+}
+
+.article-image {
+  /* clip-path: polygon(0 0, 100% 0, 40% 100%, 0% 100%); */
+  /* shape-outside: polygon(0 0, 100% 0, 40% 100%, 0% 100%); */
+
+  width: 200px;
+  float: left;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.shadow {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.article-image.shadow {
+  margin-right: 10px;
+}
+
+.article-image:hover {
+  transform: rotate(10deg);
+}
+
+@keyframes paul {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#logo img {
+  animation: paul 2s infinite;
+}
+
+.input:focus {
+  box-shadow: 0px 0px 0px 2px red;
+  outline: none;
+}
+
+.input:disabled {
+  background: #999;
+}
+
+p:first-of-type::first-letter {
+  font-size: 3em;
+  color: red;
+}
+
+::selection {
+  background: magenta;
+}
+
+[href^='http'] {
+  color: red;
+}
+
+[class$='shadow'] {
+  margin-top: 50px;
+}
+
+/*
+  *                              -> 0
+  E, ::pseudo-element            -> 1
+  .clasa, :pseudo-clasa, [attr]  -> 10
+  #id                            -> 100
+*/ ;
