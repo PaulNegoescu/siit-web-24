@@ -1,3 +1,9 @@
+html {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #999;
+}
+
 #logo img {
   width: 50px;
 }
@@ -68,4 +74,51 @@ p:first-of-type::first-letter {
   E, ::pseudo-element            -> 1
   .clasa, :pseudo-clasa, [attr]  -> 10
   #id                            -> 100
-*/ ;
+
+  inline style | ids | classes, attr, pseudo-c | e, pseudo-e | *
+               |  1  |            0            |      30     |
+*/
+.main-menu__link {
+  color: violet;
+}
+
+.main-menu a {
+  color: green;
+}
+
+.main-nav a[href] {
+  color: red;
+}
+
+/* .hidden {
+  display: none !important;
+} */
+
+.main-menu > li {
+  display: inline-block;
+}
+
+.main-menu a {
+  padding: 5px;
+}
+
+.main-menu > li ~ li {
+  border-left: 1px solid black;
+}
+
+p,
+a {
+  border-top: 1px solid black;
+}
+
+/* header ~ p {
+  color: cyan;
+} */
+
+header {
+  color: fuchsia;
+}
+
+a {
+  color: inherit;
+}

@@ -12,12 +12,26 @@
       <a href="index.html" id="logo">
         <img src="images/logo.jpg" alt="Logo-ul scolii informale" />
       </a>
-      <nav>
-        <ul>
+      <nav class="main-nav">
+        <ul class="main-menu">
           <li><a href="/">Home</a></li>
           <li><a href="curs2.html">Curs 2</a></li>
-          <li><a href="child/about.html">About</a></li>
-          <li><a href="images/cat.webp">Cat</a></li>
+          <li>
+            <a
+              href="child/about.html"
+              class="main-menu__link main-menu__link--active hidden"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a href="images/cat.webp">Cat</a>
+            <ul>
+              <li><a href="#">Dummy</a></li>
+              <li><a href="#">Text</a></li>
+              <li><a href="#">Aici</a></li>
+            </ul>
+          </li>
           <li><a href="https://scoalainformala.ro">Scoala Informala</a></li>
         </ul>
       </nav>
@@ -30,11 +44,14 @@
           <header class="shadow">
             <h1>Our article header</h1>
             <h2>Subtitle</h2>
+            <a href="#">Dummy2 </a>
           </header>
           <p>
             <img src="images/cat.webp" alt="cat" class="article-image shadow" />
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Dignissimos minima doloremque repellat nostrum magnam perspiciatis
+            <a href="#">
+              Dignissimos minima doloremque repellat nostrum magnam perspiciatis
+            </a>
             optio laboriosam nesciunt inventore esse quod modi sit nulla, ex aut
             cupiditate officia explicabo sapiente.
           </p>
