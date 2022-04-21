@@ -1,7 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'MySoul';
+  src: url('../fonts/MySoul-Regular.ttf');
+}
+
 html {
-  font-family: sans-serif;
+  font-family: Roboto, MySoul, sans-serif;
   line-height: 1.5;
-  color: #999;
+}
+
+body {
+  margin: 0;
 }
 
 #logo img {
@@ -84,10 +96,18 @@ p:first-of-type::first-letter {
 
 .main-menu a {
   color: green;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.main-menu a:hover {
+  text-decoration: underline;
 }
 
 .main-nav a[href] {
   color: red;
+  /* font-weight: 400; */
 }
 
 /* .hidden {
@@ -117,8 +137,17 @@ a {
 
 header {
   color: fuchsia;
+  background-color: hsla(180, 50%, 30%, 0.5);
+  border: 10px solid black;
+
+  width: 100vw;
+
+  padding: 5px 10px;
 }
 
 a {
   color: inherit;
+}
+h1 {
+  float: left;
 }
