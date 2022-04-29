@@ -216,7 +216,7 @@ h2.b {
 
 .grid-container {
     display: grid;
-     /* grid-template-columns: auto auto auto; */
+    /* grid-template-columns: auto auto auto; */
     /* grid-template-columns: 100px auto 100px; */
     /* grid-template-columns: auto auto;  */
     /* grid-template-rows: repeat(5, 100px); */
@@ -239,4 +239,122 @@ h2.b {
     padding: 20px;
     font-size: 30px;
     text-align: center;
+}
+
+.item-5 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.item-1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.item-8 {
+    grid-column: 1 / -1;
+    /* grid-row: 3 / span 3 */
+}
+
+.grid-container-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    /* grid-template-columns: repeat(auto-fit,  minmax(100px, 1fr)); */
+    background-color: #2196F3;
+    padding: 10px;
+    grid-gap: 20px;
+}
+
+.grid-item-auto {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+.item1-area {
+    /* grid-area: header1;
+    grid-area: content3; */
+    grid-area: footer2;
+}
+
+.grid-container-area {
+    display: grid;
+    grid-template-areas: 'header1 header2 header3' 'content1 content2 content3' 'footer1 . footer2';
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+    grid-template-columns: repeat (3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-container-area>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+#myDIVAutoFlow {
+    height: 300px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-flow: dense;
+    display: grid;
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+#myDIVAutoFlow div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.item3AutoFlow {
+    grid-column: auto / span 2;
+}
+
+#exampleJustifyItems {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    justify-items: start;
+    background-color: #cccccc;
+}
+
+#exampleJustifyItems>div {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    width: 100px;
+    height: 50px;
+}
+
+.oneJustifyItems {
+    background-color: #1c87c9;
+}
+
+.twoJustifyItems {
+    background-color: #8ebf42;
+}
+
+.threeJustifyItems {
+    background-color: #666666;
+}
+
+.grid-container-align-items {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+.grid-container-align-items > div {
+    border: 1px solid blue;
 }
