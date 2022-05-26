@@ -34,7 +34,7 @@ function handleClick(e) {
 }
 
 function getRandomInt(min = 0, max = 3) {
-  return Math.floor(Math.random() * max + min);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function fizzbuzz(num) {
