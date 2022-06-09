@@ -1,5 +1,13 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "p@p.com",
+      "password": "$2a$10$.kCjA70KPbglBQqpVPi7RuTsaDCBHM40Iy.BuuH/AfT.F92sRCt4K",
+      "firstName": "Paul",
+      "lastName": "Negoescu",
+      "id": 1
+    }
+  ],
   "todos": [
     {
       "id": 1,
