@@ -1,0 +1,14 @@
+{
+  "name": "siit-web-24",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulNegoescu/siit-web-24.git"
+  },
+  "author": "Paul Negoescu <paul.negoescu@scoalainformala.ro>",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0"
+  }
+}
