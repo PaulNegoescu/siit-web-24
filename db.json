@@ -11,7 +11,7 @@
   "todos": [
     {
       "id": 1,
-      "title": "Buy milk",
+      "title": "Buy Milk",
       "completed": false,
       "userId": 1
     }

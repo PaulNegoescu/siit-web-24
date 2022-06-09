@@ -10,6 +10,7 @@
   "author": "Paul Negoescu <paul.negoescu@scoalainformala.ro>",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "json-server": "^0.17.0",
     "json-server-auth": "^2.1.0"
   }
