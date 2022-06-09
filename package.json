@@ -1,6 +1,8 @@
 {
   "name": "siit-web-24",
-  "scripts": {},
+  "scripts": {
+    "start": "json-server-auth -p 3005 --watch db.json --routes routes.json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PaulNegoescu/siit-web-24.git"
