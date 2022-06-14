@@ -58,11 +58,11 @@ function todoList() {
   // we need to refresh the list
   const addTodoForm = document.querySelector('[data-add-todo-form]');
   const errorMessageContainer = document.querySelector('[data-error-message]');
-  const formInputs = addTodoForm.elements;
+  const titleInput = addTodoForm.elements.title;
 
   addTodoForm.addEventListener('submit', handleAddTodo);
 
-  formInputs.title.addEventListener('keydown', handleKeydown);
+  titleInput.addEventListener('keydown', handleKeydown);
 
   function handleKeydown() {
     errorMessageContainer.innerText = '';
@@ -71,7 +71,7 @@ function todoList() {
   function handleAddTodo(e) {
     e.preventDefault(); // am oprit comportamentul implicit al formularului
     // const title = document.querySelector('[data-todo-title-input]').value;
-    const title = formInputs.title.value;
+    const title = titleInput.value;
     errorMessageContainer.innerText = '';
 
     if (!title.trim()) {
