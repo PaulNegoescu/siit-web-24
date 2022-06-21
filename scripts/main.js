@@ -17,7 +17,10 @@
     const delBtn = document.createElement('button');
     const icon = document.createElement('i');
     delBtn.append(icon);
+    delBtn.dataset.todoToDelete = todo.id;
     icon.classList.add('fa-solid', 'fa-trash-can');
+    // icon.dataset.todoToDelete = todo.id;
+    // icon.style.pointerEvents = 'none';
 
     item.append(label, delBtn);
 
@@ -148,4 +151,27 @@
     }
   }
   enableCompleteTodos();
+
+  function enableDeleteTodos() {
+    document
+      .querySelector('[data-todo-list]')
+      .addEventListener('click', handleDelete);
+
+    function handleDelete(e) {
+      const idToDelete = e.target.closest('button')?.dataset.todoToDelete;
+
+      if (!idToDelete) {
+        return;
+      }
+
+      fetch(`${apiUrl}/${idToDelete}`, {
+        method: 'DELETE',
+      })
+        .then((res) => res.json())
+        .then(() => {
+          e.target.closest('li').remove();
+        });
+    }
+  }
+  enableDeleteTodos();
 })();

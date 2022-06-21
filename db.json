@@ -10,76 +10,10 @@
   ],
   "todos": [
     {
-      "id": 1,
-      "title": "Buy Milk",
-      "completed": false,
-      "userId": 1
-    },
-    {
-      "title": "qwer",
-      "completed": false,
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "title": "        ddsf",
+      "title": "fsdfsdf",
       "completed": true,
       "userId": 1,
-      "id": 3
-    },
-    {
-      "title": "asdsa",
-      "completed": true,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "title": "sdasda",
-      "completed": true,
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "title": "asddd",
-      "completed": true,
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "title": "bhhh",
-      "completed": true,
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "title": "wqewqeq",
-      "completed": true,
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "title": "231231231",
-      "completed": true,
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "title": "jhkhjkhkjkhj",
-      "completed": false,
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "title": "Paul",
-      "completed": false,
-      "userId": 1,
-      "id": 11
-    },
-    {
-      "title": "dssfsdf",
-      "completed": true,
-      "userId": 1,
-      "id": 12
+      "id": 1
     }
   ]
 }
