@@ -54,3 +54,107 @@ html {
   border-radius: 50%;
   border: 2px solid white;
 }
+
+.main-content {
+  padding: 0 0.5rem;
+}
+
+.search-form {
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.search-form input {
+  flex-grow: 1;
+  background: transparent;
+  border: 0;
+  caret-color: white;
+  color: white;
+}
+
+.search-form input::placeholder {
+  color: #aeaeae;
+}
+
+.search-form button {
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 0;
+}
+
+.card-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+}
+
+.card-carousel::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.movie-card {
+  position: relative;
+}
+
+.movie-badges {
+  position: absolute;
+  bottom: 30px;
+  padding-left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.movie-badges {
+  list-style-position: inside;
+  color: #cecece;
+}
+
+.movie-badges :first-child {
+  list-style: none;
+}
+
+.movie-rating {
+  position: absolute;
+  bottom: -15px;
+  right: -50px;
+  list-style: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 2px 5px;
+}
+
+.movie-title {
+  position: absolute;
+  bottom: 10px;
+  margin: 0 0 0 1rem;
+
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.bookmark-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  font-size: 0.7rem;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.movie-card img {
+  border-radius: 10px;
+}

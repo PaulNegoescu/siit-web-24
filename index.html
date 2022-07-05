@@ -13,6 +13,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/main.js" defer></script>
   </head>
   <body>
     <nav class="main-nav">
@@ -43,7 +44,7 @@
       </a>
     </nav>
     <div class="main-content">
-      <form>
+      <form class="search-form">
         <button><i class="fa-solid fa-search"></i></button>
         <input
           type="text"
@@ -52,6 +53,82 @@
           placeholder="Search for movies or TV series"
         />
       </form>
+      <article>
+        <h1>Trending</h1>
+        <div class="card-carousel">
+          <div class="movie-card">
+            <img src="https://picsum.photos/180/100" alt="" />
+            <a href="#" class="bookmark-button">
+              <i class="fa-solid fa-bookmark"></i>
+            </a>
+            <ul class="movie-badges">
+              <li class="movie-year">2008</li>
+              <li class="movie-category">
+                <i class="fa-solid fa-film"></i> Movie
+              </li>
+              <li class="movie-rating">PG</li>
+            </ul>
+            <h2 class="movie-title">Space title</h2>
+          </div>
+          <div class="movie-card">
+            <img src="https://picsum.photos/180/100" alt="" />
+            <a href="#" class="bookmark-button">
+              <i class="fa-solid fa-bookmark"></i>
+            </a>
+            <ul class="movie-badges">
+              <li class="movie-year">2008</li>
+              <li class="movie-category">
+                <i class="fa-solid fa-film"></i> Movie
+              </li>
+              <li class="movie-rating">PG</li>
+            </ul>
+            <h2 class="movie-title">Space title</h2>
+          </div>
+          <div class="movie-card">
+            <img src="https://picsum.photos/180/100" alt="" />
+            <a href="#" class="bookmark-button">
+              <i class="fa-solid fa-bookmark"></i>
+            </a>
+            <ul class="movie-badges">
+              <li class="movie-year">2008</li>
+              <li class="movie-category">
+                <i class="fa-solid fa-film"></i> Movie
+              </li>
+              <li class="movie-rating">PG</li>
+            </ul>
+            <h2 class="movie-title">Space title</h2>
+          </div>
+          <div class="movie-card">
+            <img src="https://picsum.photos/180/100" alt="" />
+            <a href="#" class="bookmark-button">
+              <i class="fa-solid fa-bookmark"></i>
+            </a>
+            <ul class="movie-badges">
+              <li class="movie-year">2008</li>
+              <li class="movie-category">
+                <i class="fa-solid fa-film"></i> Movie
+              </li>
+              <li class="movie-rating">PG</li>
+            </ul>
+            <h2 class="movie-title">Space title</h2>
+          </div>
+          <div class="movie-card">
+            <img src="https://picsum.photos/180/100" alt="" />
+            <a href="#" class="bookmark-button">
+              <i class="fa-solid fa-bookmark"></i>
+            </a>
+            <ul class="movie-badges">
+              <li class="movie-year">2008</li>
+              <li class="movie-category">
+                <i class="fa-solid fa-film"></i> Movie
+              </li>
+              <li class="movie-rating">PG</li>
+            </ul>
+            <h2 class="movie-title">Space title</h2>
+          </div>
+        </div>
+      </article>
     </div>
+    <div data-movie-list></div>
   </body>
 </html>
