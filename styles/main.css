@@ -219,3 +219,9 @@ html {
     align-items: center;
   }
 }
+
+[data-pagination],
+[data-pagination-dynamic] {
+  display: flex;
+  gap: 0.5rem;
+}
