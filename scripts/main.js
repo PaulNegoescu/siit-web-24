@@ -31,6 +31,8 @@ const user2 = {
   height: 1.8,
   calculateBmi: user1.calculateBmi,
   func2: user1.whatIsThis,
+  get fullName() {},
+  set fullName(value) {},
 };
 
 // console.log(user2.calculateBmi(), user1.calculateBmi());
@@ -56,17 +58,19 @@ What is this?
         i. using bind to create a new function with a bound this (whatever we want)
         ii. arrow functions take this from the scope they are defined in (lexical this)
 */
-
 function User(fName, lName, age, weight, height) {
   this.fName = fName;
   this.lName = lName;
   this.age = age;
   this.weight = weight;
   this.height = height;
+
   this.toString = function () {
     return 'Hahaha';
   };
 }
+
+User.altaStatica = function () {};
 
 User.prototype.calculateBmi = function () {
   return (this.weight / this.height ** 2).toFixed(2);
@@ -75,3 +79,48 @@ User.prototype.calculateBmi = function () {
 const user3 = new User('Paul', 'Negoescu', 37, 95, 1.85);
 const user4 = new User('Andrei', 'Testsubject', 23, 100, 1.75);
 console.log(user3);
+
+// Inheritance
+class Admin extends User {
+  // proprietate publica
+  oarecare = 'ceva';
+
+  //proprietate privata (un mod de a forta incapsularea)
+  #oPrivata = 'vizibila doar in clasa';
+
+  constructor(isSuper, ...config) {
+    super(...config);
+    this.isSuper = isSuper;
+    // this.oarecare = 'ceva';
+  }
+
+  aFunction() {
+    return this.oarecare;
+  }
+
+  damiPrivata() {
+    return this.#oPrivata;
+  }
+
+  // Getter ... Magic Getter
+  get fullName() {
+    return this.fName + ' ' + this.lName + ' is an admin';
+  }
+
+  // Setter ... Magic Setter
+  set fullName(value) {
+    const parts = value.split(' ');
+    this.fName = parts[0];
+    this.lName = parts[1];
+  }
+
+  static metodaStatica() {
+    console.log('Aici nu am acces la this');
+  }
+}
+
+const admin1 = new Admin(true, 'Paul', 'Negoescu', 37, 95, 1.85);
+admin1.fullName = 'Andrei Popescu';
+console.log(admin1.fullName);
+
+// SOLID - Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion
