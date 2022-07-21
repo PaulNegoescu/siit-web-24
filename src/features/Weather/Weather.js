@@ -1,37 +1,41 @@
 import { useEffect, useState } from 'react';
 
-export function Weather({ city }) {
+export function Weather() {
   const [weather, setWeather] = useState(null);
   const [values, setValues] = useState({
-    city,
+    city: '',
     country: 'RO',
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // setValues({ ...values, city });
-    setValues((oldState) => {
-      return { ...oldState, city };
-    });
-  }, [city]);
+    setIsLoading(true);
+    navigator.geolocation.getCurrentPosition(
+      (geo) => {
+        const { latitude, longitude } = geo.coords;
 
-  useEffect(() => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},RO&appid=c7da641777760054e5ca6164eb47580a`
-    )
-      .then((res) => res.json())
-      .then((data) => setWeather(data));
-  }, [city]);
-
-  // if (!weather) {
-  //   return <strong>Loading ...</strong>;
-  // }
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=d301fc8dd067329503a3af727de6155a`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setIsLoading(false);
+            setWeather(data);
+            setValues((oldState) => ({ ...oldState, city: data.name }));
+          });
+      },
+      () => setIsLoading(false)
+    );
+  }, []);
 
   const currentTemp = (weather?.main.temp - 273.15).toFixed(1);
+  const maxTemp = (weather?.main.temp_max - 273.15).toFixed(1);
+  const minTemp = (weather?.main.temp_min - 273.15).toFixed(1);
 
   function handleSubmit(e) {
     e.preventDefault();
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${values.city},${values.country}&appid=c7da641777760054e5ca6164eb47580a`
+      `https://api.openweathermap.org/data/2.5/weather?q=${values.city},${values.country}&appid=d301fc8dd067329503a3af727de6155a`
     )
       .then((res) => res.json())
       .then((data) => setWeather(data));
@@ -41,9 +45,12 @@ export function Weather({ city }) {
     // const newValues = { ...values };
     // newValues[e.target.name] = e.target.value;
     // setValues(newValues);
-
     setValues({ ...values, [e.target.name]: e.target.value });
   }
+
+  // if (!weather) {
+  //   return <strong>Loading ...</strong>;
+  // }
 
   return (
     <>
@@ -74,7 +81,20 @@ export function Weather({ city }) {
         </p>
         <button type="submit">Get Weather</button>
       </form>
-      {weather && currentTemp} &deg;C
+      {isLoading && <strong>Loading ...</strong>}
+      {weather && (
+        <>
+          <p>
+            <img
+              src={`http://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
+              alt={weather?.weather[0].description}
+            />
+          </p>
+          <p>Max: {weather && maxTemp} &deg;C</p>
+          <p>Current: {weather && currentTemp} &deg;C</p>
+          <p>Min: {weather && minTemp} &deg;C</p>
+        </>
+      )}
     </>
   );
 }

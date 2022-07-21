@@ -1,0 +1,9 @@
+.movie-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.movie-list h1 {
+  grid-column: 1/-1;
+}
