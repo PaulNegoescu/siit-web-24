@@ -6,4 +6,9 @@
   display: flex;
   gap: 1rem;
   list-style: none;
+  width: 100%;
+}
+
+.push-right {
+  margin-left: auto;
 }

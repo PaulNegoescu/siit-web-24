@@ -6,6 +6,7 @@ import {
   Weather,
   MovieList,
   MovieDetails,
+  Auth,
 } from './features';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/weather" element={<Weather />} />
+        <Route path="/register" element={<Auth />} />
         <Route path="/movies" element={<MovieList />} />
         <Route path="/movies/:movieId" element={<MovieDetails />} />
         <Route path="*" element={<NotFound />} />

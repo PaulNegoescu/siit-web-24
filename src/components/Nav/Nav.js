@@ -38,6 +38,23 @@ export function Nav() {
             Movies
           </NavLink>
         </li>
+
+        <li className={styles['push-right']}>
+          <NavLink
+            className={({ isActive }) => (isActive ? styles.active : '')}
+            to="/login"
+          >
+            Login
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? styles.active : '')}
+            to="/register"
+          >
+            Register
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
