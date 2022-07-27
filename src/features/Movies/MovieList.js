@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+
 import { MovieCard } from './MovieCard';
 
 import styles from './Movies.module.css';
+import { Link } from 'react-router-dom';
+import { useAuthContext } from '../Auth/AuthContext';
 
 export function MovieList() {
   const [movies, setMovies] = useState(null);
+  const { user } = useAuthContext();
 
   useEffect(() => {
     fetch('http://localhost:3005/api/movies?_limit=20')
@@ -29,6 +35,11 @@ export function MovieList() {
   return (
     <section className={styles['movie-list']}>
       <h1>Movies</h1>
+      {user && (
+        <Link to="/movies/add" className="col-span-full text-2xl">
+          <FontAwesomeIcon icon={solid('circle-plus')} /> Add Movie
+        </Link>
+      )}
       {movies.map((movie) => (
         <MovieCard key={movie.id} film={movie} />
       ))}

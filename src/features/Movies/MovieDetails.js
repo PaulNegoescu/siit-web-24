@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { regular } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { useAuthContext } from '../Auth/AuthContext';
 
 export function MovieDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const { accessToken } = useAuthContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3005/movies/' + movieId)
@@ -15,6 +18,24 @@ export function MovieDetails() {
 
   if (!movie) {
     return <strong>Loading...</strong>;
+  }
+
+  async function handleDeleteMovie() {
+    const res = window.confirm(
+      `Do you really want to delete the movie "${movie.title}"?`
+    );
+    if (!res) {
+      return;
+    }
+
+    await fetch('http://localhost:3005/movies/' + movie.id, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    navigate('/movies');
   }
 
   return (
@@ -27,6 +48,8 @@ export function MovieDetails() {
           <FontAwesomeIcon icon={regular('star')} />{' '}
           <strong>{movie.imdbrating} / 10</strong>
         </p>
+        <button onClick={handleDeleteMovie}>Delete Movie</button>
+        <Link to={`/movies/edit/${movie.id}`}>Edit this movie</Link>
       </div>
     </>
   );
